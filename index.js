@@ -11,5 +11,5 @@ V.min=(v,m)=>_((x,k)=>x>=v||Y(m,k,'greater than '+v))
 V.max=(v,m)=>_((x,k)=>x<=v||Y(m,k,'less than '+v))
 V.boolean=m=>_((x,k)=>x===!0||x===!1||Y(m,k,'a boolean'))
 V.date=m=>_((x,k)=>x instanceof Date&&!isNaN(x)||Y(m,k,'a date'))
-V.array=(Z,m)=>_((x,k)=>Array.isArray(x)&&(Z?x.map((v,i)=>{if(T(v=Z(v,k+`[${i}]`)))throw new Error(v)})&&1:1)||Y(m,k,'a valid array'))
+V.array=(Z,m)=>_((x,k)=>Array.isArray(x)&&(Z?x.map((v,i)=>{if(Array.isArray(Z))Z.map(f=>{if(T(f=f(v,k+`[${i}]`)))throw new Error(f)});else if(T(v=Z(v,k+`[${i}]`)))throw new Error(v)})&&1:1)||Y(m,k,'a valid array'))
 export default V

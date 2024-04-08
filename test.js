@@ -1,4 +1,4 @@
-import validate from './index.js';
+import validate from "./index.js";
 
 validate({
   required: [validate.required()],
@@ -7,7 +7,10 @@ validate({
   minLength: [validate.string(), validate.minLength(8)],
   maxLength: [validate.string(), validate.maxLength(8)],
   regex: [validate.string(), validate.regex(/[a-z]+/g)],
-  array: [validate.array(validate.string()), validate.minLength(1)],
+  array: [
+    validate.array([validate.string(), validate.maxLength(3)]),
+    validate.minLength(1),
+  ],
   number: validate.number(),
   min: [validate.number(), validate.min(3)],
   max: [validate.number(), validate.max(3)],
@@ -25,5 +28,5 @@ validate({
   max: 3,
   boolean: true,
   date: new Date(),
-  array: ["string"],
-})
+  array: ["str"],
+});
