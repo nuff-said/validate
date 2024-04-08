@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A compact node.js validation library",
   "main": "index.js",
-  "files": ["index.js"],
+  "type": "module",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuff-said/validate.git"
@@ -16,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/nuff-said/validate/issues"
   },
-  "homepage": "https://github.com/nuff-said/validate#readme"
+  "homepage": "https://github.com/nuff-said/validate#readme",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.1.2",
+    "size-limit": "^11.1.2"
+  },
+  "size-limit": [
+    {
+      "path": "index.js",
+      "limit": "510B"
+    }
+  ]
 }
