@@ -1,12 +1,20 @@
 {
-  "name": "validate",
+  "name": "@nuff-said/validate",
   "version": "1.0.0",
-  "description": "",
+  "description": "A compact node.js validation library",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "files": ["index.js"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuff-said/validate.git"
   },
-  "keywords": [],
+  "keywords": [
+    "validate"
+  ],
   "author": "Siddharth Shyniben <siddharth.muscat@gmail.com> (https://siddu.tech/)",
-  "license": "ISC"
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nuff-said/validate/issues"
+  },
+  "homepage": "https://github.com/nuff-said/validate#readme"
 }
