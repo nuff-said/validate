@@ -19,7 +19,7 @@ validateUser({
     name: "bazinga",
     age: "12"
 })
-// throws Error(Your age gotta be a number)
+// Error: Your age gotta be a number
 ```
 
 ## Installation
@@ -53,7 +53,7 @@ The following methods are supported for validation:
 - `bigint(message?)`: Checks if value is a BigInt
 - `boolean(message?)`: Checks if a value is a boolean
 - `date(message?)`: Checks if a value is a _valid_ Date
-- `array(validator?, message?)`: Checks if a value is an array. An optional validator can be passed to check for each item in the array.
+- `array(validators?, message?)`: Checks if a value is an array. An optional validator or array of validators can be passed to check for each item in the array.
 
 - `hasLength(length, message?)`: Checks if a string or array has a certain length
 - `minLength(length, message?)`: Checks if a string or array has a certain minimum length (inclusive)
@@ -61,6 +61,18 @@ The following methods are supported for validation:
 - `regex(regex, message?)`: Checks if a string matches a certain regex.
 - `min(value, message?)`: Checks if a number is greater than or equal to `value`
 - `max(value, message?)`: Checks if a number is less than or equal to `value`
+
+Custom validators can also be passed like so:
+
+```js
+const fooValidator = (value, key) => value == "foo" || `${key} is not foo`
+const validator = validate({
+    text: fooValidator
+})
+
+validator ({text: "bar"})
+// Error: text is not foo!
+```
 
 ## Contributing
 
